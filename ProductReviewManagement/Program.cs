@@ -39,7 +39,8 @@ namespace ProductReviewManagement
 
            };
             Console.WriteLine("PLease Select the Option from Below:\n" +
-              "1) Getting all the Records from List\n");
+              "1) Getting all the Records from List\n" +
+              "2) Retrieve Top 3 Records From the List\n");
 
             int option = Convert.ToInt32(Console.ReadLine());
 
@@ -51,6 +52,11 @@ namespace ProductReviewManagement
                         Console.WriteLine(Product.ProductId + " | " + Product.Userid + " | " + Product.Rating + " | " + Product.Review + " | " + Product.islike);
                     }
                     break;
+
+                case 2:
+                    ProductManagement.Top3Records(productlist);
+                    break;
+
 
                 default:
                     Console.WriteLine("Please Choose Proper Options.");
