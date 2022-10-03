@@ -8,7 +8,7 @@ namespace ProductReviewManagement
         {
             Console.WriteLine("Welcome to Product review Management Program");
 
-            List<Product> productlist = new List<Product>()
+           List<Product> productlist = new List<Product>()
            {
 
                 new Product(){ProductId=1,Userid=1,Rating=5,Review="Very Good",islike=true},
@@ -42,7 +42,8 @@ namespace ProductReviewManagement
             Console.WriteLine("PLease Select the Option from Below:\n" +
               "1) Getting all the Records from List\n" +
               "2) Retrieve Top 3 Records From the List\n" +
-              "3) Retrieving Record where Rating is greater than 3 and ProductID is 1 or 4 or 9\n");
+              "3) Retrieving Record where Rating is greater than 3 and ProductID is 1 or 4 or 9\n" +
+              "4) Retrieving Count of the Review for each ProductID using GroupBy LINQ Operator\n");
 
             int option = Convert.ToInt32(Console.ReadLine());
 
@@ -62,6 +63,12 @@ namespace ProductReviewManagement
                 case 3:
                     Console.WriteLine("::::::::::::::::::::::::::::::::");
                     ProductManagement.RetrieveRecords(productlist);
+                    break;
+
+                case 4:
+                    Console.WriteLine("::::::::::::::::::::::::::::::::");
+                    ProductManagement manage = new ProductManagement();
+                    manage.RetrieveCount(productlist);
                     break;
 
                 default:
