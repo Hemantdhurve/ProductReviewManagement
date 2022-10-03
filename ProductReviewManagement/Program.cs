@@ -38,9 +38,11 @@ namespace ProductReviewManagement
                 new Product(){ProductId=25,Userid=25,Rating=5,Review="Very Good",islike=true},
 
            };
+
             Console.WriteLine("PLease Select the Option from Below:\n" +
               "1) Getting all the Records from List\n" +
-              "2) Retrieve Top 3 Records From the List\n");
+              "2) Retrieve Top 3 Records From the List\n" +
+              "3) Retrieving Record where Rating is greater than 3 and ProductID is 1 or 4 or 9\n");
 
             int option = Convert.ToInt32(Console.ReadLine());
 
@@ -57,6 +59,10 @@ namespace ProductReviewManagement
                     ProductManagement.Top3Records(productlist);
                     break;
 
+                case 3:
+                    Console.WriteLine("::::::::::::::::::::::::::::::::");
+                    ProductManagement.RetrieveRecords(productlist);
+                    break;
 
                 default:
                     Console.WriteLine("Please Choose Proper Options.");
