@@ -43,10 +43,12 @@ namespace ProductReviewManagement
               "1) Getting all the Records from List\n" +
               "2) Retrieve Top 3 Records From the List\n" +
               "3) Retrieving Record where Rating is greater than 3 and ProductID is 1 or 4 or 9\n" +
-              "4) Retrieving Count of the Review for each ProductID using GroupBy LINQ Operator\n");
+              "4) Retrieving Count of the Review for each ProductID using GroupBy LINQ Operator\n" +
+              "5) Retrieve only ProductId and Review from the List using Select LINQ operator\n");
 
             int option = Convert.ToInt32(Console.ReadLine());
 
+            ProductManagement manage = new ProductManagement();
             switch (option)
             {
                 case 1:
@@ -67,8 +69,13 @@ namespace ProductReviewManagement
 
                 case 4:
                     Console.WriteLine("::::::::::::::::::::::::::::::::");
-                    ProductManagement manage = new ProductManagement();
+                   
                     manage.RetrieveCount(productlist);
+                    break;
+
+                case 5:
+                    Console.WriteLine("::::::::::::::::::::::::::::::::");
+                    manage.RetrieveProductId(productlist);
                     break;
 
                 default:

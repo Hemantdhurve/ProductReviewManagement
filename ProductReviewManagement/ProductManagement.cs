@@ -41,5 +41,16 @@ namespace ProductReviewManagement
                 Console.WriteLine(record.ProductId + " | " + record.count);
             }
         }
+
+        //UC5 Retrieve only ProductId and Review from the List of Records using Select LINQ operator
+        public void RetrieveProductId(List<Product> productreview)
+        {
+            var productdata = (from Product in productreview select new {Product.ProductId, Product.Review });
+
+            foreach (var record in productdata)
+            {
+                Console.WriteLine(record.ProductId + " | " + record.Review);
+            }
+        }
     }
 }
