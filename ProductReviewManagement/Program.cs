@@ -7,7 +7,57 @@ namespace ProductReviewManagement
         public static void Main()
         {
             Console.WriteLine("Welcome to Product review Management Program");
-           
+
+            List<Product> productlist = new List<Product>()
+           {
+
+                new Product(){ProductId=1,Userid=1,Rating=5,Review="Very Good",islike=true},
+                new Product(){ProductId=2,Userid=2,Rating=4,Review="Good",islike=true},
+                new Product(){ProductId=3,Userid=3,Rating=3,Review="Fine",islike=false},
+                new Product(){ProductId=4,Userid=4,Rating=2,Review="Poor",islike=false},
+                new Product(){ProductId=5,Userid=5,Rating=3,Review="Fine",islike=false},
+                new Product(){ProductId=6,Userid=6,Rating=4,Review="Good",islike=true},
+                new Product(){ProductId=7,Userid=7,Rating=4,Review="Good",islike=true},
+                new Product(){ProductId=8,Userid=8,Rating=3,Review="Fine",islike=false},
+                new Product(){ProductId=9,Userid=9,Rating=2,Review="Poor",islike=false},
+                new Product(){ProductId=10,Userid=10,Rating=5,Review="Very Good",islike=true},
+                new Product(){ProductId=11,Userid=11,Rating=4,Review="Good",islike=true},
+                new Product(){ProductId=12,Userid=12,Rating=4,Review="Good",islike=true},
+                new Product(){ProductId=13,Userid=13,Rating=4,Review="Good",islike=true},
+                new Product(){ProductId=14,Userid=14,Rating=4,Review="Good",islike=true},
+                new Product(){ProductId=15,Userid=15,Rating=4,Review="Good",islike=true},
+                new Product(){ProductId=16,Userid=16,Rating=5,Review="Very Good",islike=true},
+                new Product(){ProductId=17,Userid=17,Rating=3,Review="Fine",islike=false},
+                new Product(){ProductId=18,Userid=18,Rating=2,Review="Poor",islike=false},
+                new Product(){ProductId=19,Userid=19,Rating=3,Review="Fine",islike=false},
+                new Product(){ProductId=20,Userid=20,Rating=3,Review="Fine",islike=false},
+                new Product(){ProductId=21,Userid=21,Rating=4,Review="Good",islike=true},
+                new Product(){ProductId=22,Userid=22,Rating=4,Review="Good",islike=true},
+                new Product(){ProductId=23,Userid=23,Rating=5,Review="Very Good",islike=true},
+                new Product(){ProductId=24,Userid=24,Rating=2,Review="Poor",islike=false},
+                new Product(){ProductId=25,Userid=25,Rating=5,Review="Very Good",islike=true},
+
+           };
+            Console.WriteLine("PLease Select the Option from Below:\n" +
+              "1) Getting all the Records from List\n");
+
+            int option = Convert.ToInt32(Console.ReadLine());
+
+            switch (option)
+            {
+                case 1:
+                    foreach (var Product in productlist)
+                    {
+                        Console.WriteLine(Product.ProductId + " | " + Product.Userid + " | " + Product.Rating + " | " + Product.Review + " | " + Product.islike);
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("Please Choose Proper Options.");
+                    break;
+
+            }
+
         }
     }
 }
