@@ -44,7 +44,8 @@ namespace ProductReviewManagement
               "2) Retrieve Top 3 Records From the List\n" +
               "3) Retrieving Record where Rating is greater than 3 and ProductID is 1 or 4 or 9\n" +
               "4) Retrieving Count of the Review for each ProductID using GroupBy LINQ Operator\n" +
-              "5) Retrieve only ProductId and Review from the List using Select LINQ operator\n");
+              "5) Retrieve only ProductId and Review from the List using Select LINQ operator\n" +
+              "6) Skipping Top 5 Records from the Record and Displaying on Console Window\n");
 
             int option = Convert.ToInt32(Console.ReadLine());
 
@@ -76,6 +77,11 @@ namespace ProductReviewManagement
                 case 5:
                     Console.WriteLine("::::::::::::::::::::::::::::::::");
                     manage.RetrieveProductId(productlist);
+                    break;
+
+                case 6:
+                    Console.WriteLine("::::::::::::::::::::::::::::::::");
+                    manage.SkipTop5Records(productlist);
                     break;
 
                 default:

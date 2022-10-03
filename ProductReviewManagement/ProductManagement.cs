@@ -45,11 +45,24 @@ namespace ProductReviewManagement
         //UC5 Retrieve only ProductId and Review from the List of Records using Select LINQ operator
         public void RetrieveProductId(List<Product> productreview)
         {
-            var productdata = (from Product in productreview select new {Product.ProductId, Product.Review });
+            var productdata = (from Product in productreview select new { Product.ProductId, Product.Review });
 
             foreach (var record in productdata)
             {
                 Console.WriteLine(record.ProductId + " | " + record.Review);
+            }
+        }
+
+        //UC6 Skipping Top 5 Records 
+        public void SkipTop5Records(List<Product> productreview)
+        {
+            //using LINQ to fetch data
+            var productdata = (from Product in productreview select Product).Skip(5);
+
+            foreach (var Product in productdata)
+            {
+                Console.WriteLine(Product.ProductId + " | " + Product.Userid + " | " + Product.Rating + " | " + Product.Review + " | " + Product.islike);
+
             }
         }
     }
