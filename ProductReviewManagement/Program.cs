@@ -46,7 +46,8 @@ namespace ProductReviewManagement
               "4) Retrieving Count of the Review for each ProductID using GroupBy LINQ Operator\n" +
               "5) Retrieve only ProductId and Review from the List using Select LINQ operator\n" +
               "6) Skipping Top 5 Records from the Record and Displaying on Console Window\n"+
-              "7) Retrieving ProductId and Review using Select Operator\n");
+              "7) Retrieving ProductId and Review using Select Operator\n" +
+              "8) Creating DataTable and add Values\n");
 
             int option = Convert.ToInt32(Console.ReadLine());
 
@@ -88,6 +89,10 @@ namespace ProductReviewManagement
                 case 7:
                     Console.WriteLine("::::::::::::::::::::::::::::::::");
                     manage.RetrieveProductIdandReview(productlist);
+                    break;
+
+                case 8:
+                    ProductDataTable.InsertdatainTable();
                     break;
 
                 default:
